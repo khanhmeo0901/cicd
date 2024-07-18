@@ -9,4 +9,9 @@ public class MainController {
     public String hello(){
         return "Study Jenkis";
     }
+
+    @GetMapping("/hello2")
+    public String hello2(){
+        return "Study Jenkis 2";
+    }
 }
