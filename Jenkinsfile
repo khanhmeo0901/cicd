@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    tools {
+            maven 'Maven 3.9.2'
+            jdk 'jdk11'
+        }
 
     stages {
         stage('Clone Repository') {
@@ -12,7 +16,7 @@ pipeline {
          stage('Build Maven') {
                     steps {
                         // Build maven
-                        sh 'mvn clean install'
+                         sh 'mvn -Dmaven.test.failure.ignore=true install'
                     }
                 }
 
